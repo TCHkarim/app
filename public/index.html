@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fiambrería - Sistema de Gestión</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="login-view" class="login-container">
+    <div class="login-card">
+      <div class="login-logo">🧀</div>
+      <h1>Fiambrería</h1>
+      <p class="login-sub">Sistema de Gestión</p>
+      <form id="login-form">
+        <label>Usuario</label>
+        <input type="text" id="login-user" value="admin" required>
+        <label>Contraseña</label>
+        <input type="password" id="login-pass" value="admin123" required>
+        <button type="submit" class="btn btn-primary btn-block">Ingresar</button>
+        <div id="login-error" class="error-msg"></div>
+      </form>
+      <p class="login-hint">Demo: admin / admin123</p>
+    </div>
+  </div>
+
+  <div id="app-view" class="app hidden">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <span class="logo">🧀</span>
+        <span class="brand">Fiambrería</span>
+      </div>
+      <nav class="nav">
+        <a href="#" data-view="dashboard" class="nav-item active">📊 Dashboard</a>
+        <a href="#" data-view="pos" class="nav-item">🛒 Punto de Venta</a>
+        <a href="#" data-view="sales" class="nav-item">🧾 Ventas</a>
+        <a href="#" data-view="products" class="nav-item">📦 Productos</a>
+        <a href="#" data-view="inventory" class="nav-item">📋 Inventario</a>
+        <a href="#" data-view="purchases" class="nav-item">🚚 Compras</a>
+        <a href="#" data-view="clients" class="nav-item">👥 Clientes</a>
+        <a href="#" data-view="suppliers" class="nav-item">🏭 Proveedores</a>
+        <a href="#" data-view="production" class="nav-item">🍳 Producción</a>
+        <a href="#" data-view="cash" class="nav-item">💰 Caja</a>
+        <a href="#" data-view="users" class="nav-item">👤 Usuarios</a>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="user-info">
+          <div class="user-avatar" id="user-avatar">A</div>
+          <div>
+            <div class="user-name" id="user-name">Admin</div>
+            <div class="user-role" id="user-role">admin</div>
+          </div>
+        </div>
+        <button id="logout-btn" class="btn btn-ghost btn-block">Cerrar sesión</button>
+      </div>
+    </aside>
+    <main class="main">
+      <header class="topbar">
+        <button id="menu-toggle" class="menu-toggle">☰</button>
+        <h2 id="view-title">Dashboard</h2>
+        <div class="topbar-right">
+          <span id="clock" class="clock"></span>
+        </div>
+      </header>
+      <div id="view-content" class="view-content"></div>
+    </main>
+  </div>
+
+  <div id="toast-container" class="toast-container"></div>
+  <div id="modal-container"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
